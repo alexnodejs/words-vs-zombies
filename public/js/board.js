@@ -5,6 +5,7 @@ app.directive('tile', function() {
   return {
     restrict: 'E',
     replace: true,
+    transclude: true,
     templateUrl: '/templates/square.html'
   }
 })
@@ -14,6 +15,7 @@ app.directive('tray', function() {
   return {
     restrict: 'E',
     replace: true,
+    transclude: true,
     templateUrl: '/templates/tray.html'
 	}
 });
@@ -168,7 +170,7 @@ app.controller('BoardCtrl', function($scope) {
 app.controller('BagCtrl', function($scope, bag) {
 	$scope.letters = bag.letters;
 	$scope.shuffle = function() {
-		// $scope.$apply(); // what is this?		
+		// $scope.$apply(); // what is this?
 		bag.shuffle();
 	}
   // $scope.$watch(bag.letters, function(old, letters, $scope) {
